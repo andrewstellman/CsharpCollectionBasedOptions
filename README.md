@@ -3,6 +3,12 @@ Provides a C# Option type based that extends `List<T>`.
 
 Examples:
 ```
+var v1 = Option.Some("xyz").Get; // sets v1 to "xyz"
+
+try {
+    var v2 = Option.None.Get; // throws an InvalidOperationException
+} catch { }
+
 Console.WriteLine(Option.Some("xyz")); // prints Some(xyz)
 Console.WriteLine(Option.None); // prints None
 
