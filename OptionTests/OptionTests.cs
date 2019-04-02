@@ -4,6 +4,7 @@ namespace OptionTests
 {
     using Options;
     using System.Collections.Generic;
+    using System.Linq;
 
     [TestClass]
     public class OptionTests
@@ -35,6 +36,10 @@ namespace OptionTests
             var d = new Dictionary<int, string>() { { 1, "a" }, { 2, "b" }, { 3, "c" } };
             Assert.AreEqual(Option<string>.Some("b"), d.GetOrElse(2));
             Assert.AreEqual(Option<string>.None, d.GetOrElse(4));
+
+            Assert.AreEqual("a", (d.GetOrElse(1) + d.GetOrElse(2)).GetOrElse("z"));
+            Assert.AreEqual("c", (d.GetOrElse(3) + d.GetOrElse(4)).GetOrElse("z"));
+            Assert.AreEqual("z", (d.GetOrElse(5) + d.GetOrElse(6)).GetOrElse("z"));
         }
 
         /// <summary>
