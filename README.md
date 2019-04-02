@@ -1,6 +1,7 @@
 # CsharpCollectionBasedOptions
-Provides a C# Option type based on collections.
+Provides a C# Option type based that extends List<T>.
 
+Examples:
 ```
 Console.WriteLine(Option.Some("xyz")); // prints Some(xyz)
 Console.WriteLine(Option.None); // prints None
