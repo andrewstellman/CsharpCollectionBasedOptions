@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionDefinition", "OptionDefinition\OptionDefinition.csproj", "{291C5DDA-A0D0-45DC-B02B-D95DAAC92CEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionTests", "OptionTests\OptionTests.csproj", "{539029AB-C3BA-4DEB-932A-C83E6438FD86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{291C5DDA-A0D0-45DC-B02B-D95DAAC92CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291C5DDA-A0D0-45DC-B02B-D95DAAC92CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291C5DDA-A0D0-45DC-B02B-D95DAAC92CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291C5DDA-A0D0-45DC-B02B-D95DAAC92CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539029AB-C3BA-4DEB-932A-C83E6438FD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539029AB-C3BA-4DEB-932A-C83E6438FD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539029AB-C3BA-4DEB-932A-C83E6438FD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539029AB-C3BA-4DEB-932A-C83E6438FD86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
