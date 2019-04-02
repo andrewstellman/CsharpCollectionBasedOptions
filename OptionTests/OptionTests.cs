@@ -4,7 +4,6 @@ namespace OptionTests
 {
     using Options;
     using System.Collections.Generic;
-    using System.Linq;
 
     [TestClass]
     public class OptionTests
@@ -15,11 +14,14 @@ namespace OptionTests
         [TestMethod]
         public void TestOptions()
         {
+            Assert.AreEqual("xyz", Option.Some("xyz").Get);
+            Assert.ThrowsException<System.InvalidOperationException>(() => Option.None.Get);
+            Assert.AreEqual(Option.Some(1), Option.Some(1) + Option.Some(2));
+            Assert.AreEqual(Option.Some("xyz"), Option.None + Option.Some("xyz"));
+
             Assert.AreEqual("Some(xyz)", Option.Some("xyz").ToString());
             Assert.AreEqual("None", Option.None.ToString());
             Assert.AreEqual("Some(null)", Option.Some(null).ToString());
-            Assert.AreEqual(Option.Some(1), Option.Some(1) + Option.Some(2));
-            Assert.AreEqual(Option.Some("xyz"), Option.None + Option.Some("xyz"));
 
             // contravariance causes Option<int> + Option<string> to call the + operator for Option<object>
             Assert.AreEqual(Option.Some(1), Option.Some(1) + Option.Some("a"));
@@ -48,11 +50,14 @@ namespace OptionTests
         [TestMethod]
         public void TestGenericOptions()
         {
+            Assert.AreEqual("xyz", Option<string>.Some("xyz").Get);
+            Assert.ThrowsException<System.InvalidOperationException>(() => Option<int>.None.Get);
+            Assert.AreEqual(Option<int>.Some(1), Option<int>.Some(1) + Option<int>.Some(2));
+            Assert.AreEqual(Option<string>.Some("xyz"), Option<string>.None + Option<string>.Some("xyz"));
+
             Assert.AreEqual("Some(xyz)", Option<string>.Some("xyz").ToString());
             Assert.AreEqual("None", Option<string>.None.ToString());
             Assert.AreEqual("Some(null)", Option<string>.Some(null).ToString());
-            Assert.AreEqual(Option<int>.Some(1), Option<int>.Some(1) + Option<int>.Some(2));
-            Assert.AreEqual(Option<string>.Some("xyz"), Option<string>.None + Option<string>.Some("xyz"));
 
             var l = new List<int>() { 1, 2, 3, 4, 5 };
             Assert.AreEqual(Option<int>.Some(1), l.FirstOption());
