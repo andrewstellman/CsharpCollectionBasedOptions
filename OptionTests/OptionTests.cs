@@ -16,6 +16,7 @@ namespace OptionTests
         {
             Assert.AreEqual("xyz", Option.Some("xyz").Get);
             Assert.ThrowsException<System.InvalidOperationException>(() => Option.None.Get);
+
             Assert.AreEqual(Option.Some(1), Option.Some(1) + Option.Some(2));
             Assert.AreEqual(Option.Some("xyz"), Option.None + Option.Some("xyz"));
 
@@ -52,6 +53,7 @@ namespace OptionTests
         {
             Assert.AreEqual("xyz", Option<string>.Some("xyz").Get);
             Assert.ThrowsException<System.InvalidOperationException>(() => Option<int>.None.Get);
+
             Assert.AreEqual(Option<int>.Some(1), Option<int>.Some(1) + Option<int>.Some(2));
             Assert.AreEqual(Option<string>.Some("xyz"), Option<string>.None + Option<string>.Some("xyz"));
 
