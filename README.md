@@ -1,5 +1,5 @@
 # CsharpCollectionBasedOptions
-Provides a C# Option type based that extends List<T>.
+Provides a C# Option type based that extends `List<T>`.
 
 Examples:
 ```
