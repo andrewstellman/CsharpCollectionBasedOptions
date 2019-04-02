@@ -73,19 +73,20 @@ namespace Options
 
         private class SomeOption<T1> : Option<T1>
         {
-            public SomeOption(T1 value)
-            {
-                base.Add(value);
-            }
+            public SomeOption(T1 value) { Add(value); }
 
-            public new void Add(T1 t) { throw new InvalidOperationException(); }
+            public new void Clear() => throw new InvalidOperationException();
 
             public override string ToString() => base[0] == null ? "Some(null)" : $"Some({base[0]})";
         }
 
         private class NoneOption<T1> : Option<T1>
         {
-            public new void Add(T1 t) { throw new InvalidOperationException(); }
+            public new void Add(T1 item) => throw new InvalidOperationException();
+
+            public new void AddRange(IEnumerable<T1> collection) => throw new InvalidOperationException();
+
+            public new int this[int key] { set => throw new InvalidOperationException(); }
 
             public override string ToString() => "None";
         }
