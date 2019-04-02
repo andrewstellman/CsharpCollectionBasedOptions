@@ -18,5 +18,5 @@ var o8 = l.FindOption(e => e > 8); // returns Option.None
 
 var d = new Dictionary<int, string>() { { 1, "a" }, { 2, "b" }, { 3, "c" } };
 var o9 = d.GetOrElse(2); // returns Option.Some("b")
-var o9 = d.GetOrElse(9); // returns Option.None
+var o10 = d.GetOrElse(9); // returns Option.None
 ```
