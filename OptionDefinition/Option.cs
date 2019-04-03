@@ -24,25 +24,25 @@ namespace Options
         /// An Option factory that returns None.
         /// </summary>
         /// <value>An empty Option.</value>
-        public static Option<T> None { get { return new NoneOption<T>(); } }
+        public static Option<T> None { get => new NoneOption<T>(); }
 
         /// <summary>
         /// Checks if an Option is empty.
         /// </summary>
         /// <value><c>true</c> if is empty; otherwise, <c>false</c>.</value>
-        public bool IsEmpty { get { return base.Count == 0; } }
+        public bool IsEmpty { get => base.Count == 0; }
 
         /// <summary>
         /// Checks if an Option is defined.
         /// </summary>
         /// <value><c>true</c> if is defined; otherwise, <c>false</c>.</value>
-        public bool IsDefined { get { return base.Count > 0; } }
+        public bool IsDefined { get => base.Count > 0; } 
 
         /// <summary>
         /// Gets the value of the Option.
         /// </summary>
         /// <value>The value of the Option.</value>
-        public T Get { get { return IsDefined ? this[0] : throw new InvalidOperationException(); } }
+        public T Get { get => IsDefined ? this[0] : throw new InvalidOperationException(); }
 
         /// <summary>
         /// Gets the value of the Option or a default value.
